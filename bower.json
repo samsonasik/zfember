@@ -1,0 +1,6 @@
+{
+    "name":"ZF2 App with Ember Demo",
+    "dependencies": {
+        "ember": "1.*"
+    }
+}

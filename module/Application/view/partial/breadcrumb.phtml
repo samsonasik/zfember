@@ -1,0 +1,7 @@
+<ul class="breadcrumb row">
+    <?php foreach ($this->pages as $key => $page): ?>
+        <li>
+            <?php echo $page->getLabel(); ?>
+        </li>
+    <?php endforeach; ?>
+</ul>

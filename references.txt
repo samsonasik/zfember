@@ -1,0 +1,6 @@
+http://emberjs.com/
+http://code.tutsplus.com/tutorials/getting-into-ember-js-part-2--net-31132
+http://code.tutsplus.com/tutorials/getting-into-emberjs-part-3--net-31394
+http://stackoverflow.com/questions/17792280/ember-live-uploading-templates
+http://stackoverflow.com/questions/19871265/ember-js-with-external-handlebars-template
+http://stackoverflow.com/questions/14328295/how-do-i-bind-to-the-active-class-of-a-link-using-the-new-ember-router
