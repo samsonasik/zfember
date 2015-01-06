@@ -10,11 +10,18 @@ Installation
 ------------
 
 The recommended way to  install is using composer.
+
+**1**. vendor dependency
 ```shell
   $  git clone https://github.com/samsonasik/zfember.git
   $  cd zfember
   $  curl -s https://getcomposer.org/installer | php --
   $  php composer.phar install
+```
+
+**2**. js dependency
+```shell
+  $ bower install
 ```
 
 Web Server Setup

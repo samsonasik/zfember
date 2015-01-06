@@ -8,3 +8,6 @@ nbproject
 .settings
 composer.lock
 vendor/bin
+public/js/ember
+public/js/handlebars
+public/js/jquery
