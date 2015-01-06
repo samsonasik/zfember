@@ -19,7 +19,7 @@ The recommended way to  install is using composer.
   $  php composer.phar install
 ```
 
-**2**. js dependency
+**2**. js dependency using [bower](http://bower.io/)
 ```shell
   $ bower install
 ```
