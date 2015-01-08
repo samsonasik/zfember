@@ -10,34 +10,41 @@ App.Router.map(function() {
 
 App.HomeRoute = Ember.Route.extend({
    beforeModel: function() {
-     return $.ajax({
-        url: '/'
-     })
-     .then(function(response) {
-        Ember.TEMPLATES.home = Ember.Handlebars.compile(response);
-    });
+     if (!Ember.TEMPLATES.home) {  
+        return $.ajax({
+           url: '/'
+        })
+        .then(function(response) {
+           Ember.TEMPLATES.home = Ember.Handlebars.compile(response);
+       });
+     }
+//     return 0;
    }
 });
 
 App.AboutRoute = Ember.Route.extend({
    beforeModel: function() {
-     return $.ajax({
-        url: '/about'
-     })
-     .then(function(response) {
-        Ember.TEMPLATES.about = Ember.Handlebars.compile(response);
-    });
+     if (!Ember.TEMPLATES.about) {   
+        return $.ajax({
+           url: '/about'
+        })
+        .then(function(response) {
+           Ember.TEMPLATES.about = Ember.Handlebars.compile(response);
+       });
+     }
    }
 });
 
 App.ContactRoute = Ember.Route.extend({
    beforeModel: function() {
-     return $.ajax({
-        url: '/contact'
-     })
-     .then(function(response) {
-        Ember.TEMPLATES.contact = Ember.Handlebars.compile(response);
-    });
+     if (!Ember.TEMPLATES.contact) {   
+        return $.ajax({
+           url: '/contact'
+        })
+        .then(function(response) {
+           Ember.TEMPLATES.contact = Ember.Handlebars.compile(response);
+       });
+     }
    }
 });
 
