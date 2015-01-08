@@ -1,21 +1,18 @@
 App = Ember.Application.create();
 
 App.Router.map(function() {
-    this.resource('home', {
-        path: '/'
-    });
     this.resource('about');
     this.resource('contact');
 });
 
-App.HomeRoute = Ember.Route.extend({
+App.IndexRoute = Ember.Route.extend({
    beforeModel: function() {
-     if (!Ember.TEMPLATES.home) {  
+     if (!Ember.TEMPLATES.index) {
         return $.ajax({
            url: '/'
         })
         .then(function(response) {
-           Ember.TEMPLATES.home = Ember.Handlebars.compile(response);
+           Ember.TEMPLATES.index = Ember.Handlebars.compile(response);
        });
      }
      return true;
@@ -24,7 +21,7 @@ App.HomeRoute = Ember.Route.extend({
 
 App.AboutRoute = Ember.Route.extend({
    beforeModel: function() {
-     if (!Ember.TEMPLATES.about) {   
+     if (!Ember.TEMPLATES.about) {
         return $.ajax({
            url: '/about'
         })
@@ -38,7 +35,7 @@ App.AboutRoute = Ember.Route.extend({
 
 App.ContactRoute = Ember.Route.extend({
    beforeModel: function() {
-     if (!Ember.TEMPLATES.contact) {   
+     if (!Ember.TEMPLATES.contact) {
         return $.ajax({
            url: '/contact'
         })

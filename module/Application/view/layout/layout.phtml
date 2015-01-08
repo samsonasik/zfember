@@ -41,32 +41,32 @@
                     </button>
                     <a class="navbar-brand" href="<?php echo $this->url('home') ?>"><img src="<?php echo $this->basePath('img/zf2-logo.png') ?>" alt="Zend Framework 2"/>&nbsp;<?php echo $this->translate('Skeleton Application') ?></a>
                 </div>
-                
+
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             <?php $navigationContainer = $this->navigation('navigation')->getContainer();
                                   foreach($navigationContainer as $page) {
                             ?>
                                 {{#link-li}}
-                                    {{#link-to '<?php echo $page->get('route'); ?>'}}
+                                    {{#link-to '<?php echo $page->get('route') === 'home' ? 'index' : $page->get('route'); ?>'}}
                                         <?php echo $page->get('label'); ?>
                                     {{/link-to}}
-                                {{/link-li}}  
+                                {{/link-li}}
                             <?php   }   ?>
                         </ul>
-                        
+
                     </div><!--/.nav-collapse -->
             </div>
         </nav>
-        
+
         <div class="container">
             {{outlet}}
         </div>
         </script>
-        
+
         <?php $script =  $this->inlineScript();
               $script->appendFile($this->basePath() . '/js/app.js');
-              
+
               echo $script;
         ?>
     </body>
