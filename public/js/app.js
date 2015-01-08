@@ -18,7 +18,7 @@ App.HomeRoute = Ember.Route.extend({
            Ember.TEMPLATES.home = Ember.Handlebars.compile(response);
        });
      }
-//     return 0;
+     return true;
    }
 });
 
@@ -32,6 +32,7 @@ App.AboutRoute = Ember.Route.extend({
            Ember.TEMPLATES.about = Ember.Handlebars.compile(response);
        });
      }
+     return true;
    }
 });
 
@@ -45,6 +46,7 @@ App.ContactRoute = Ember.Route.extend({
            Ember.TEMPLATES.contact = Ember.Handlebars.compile(response);
        });
      }
+     return true;
    }
 });
 
