@@ -17,13 +17,15 @@ class Module
     public function onBootstrap(MvcEvent $e)
     {
         $eventManager        = $e->getApplication()->getEventManager();
-        
+
         $sharedEvents        = $e->getApplication()->getEventManager()->getSharedManager();
         $sharedEvents->attach('Zend\Mvc\Controller\AbstractActionController', 'dispatch', function($e) {
             $result = $e->getResult();
-            $result->setTerminal($e->getRequest()->isXmlHttpRequest());
+            if ($result instanceof \Zend\View\Model\ViewModel) {
+                $result->setTerminal($e->getRequest()->isXmlHttpRequest());
+            }
         });
-        
+
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
     }
