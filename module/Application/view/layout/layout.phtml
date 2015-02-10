@@ -24,7 +24,8 @@
             ->prependFile($this->basePath() . '/js/html5shiv.js',   'text/javascript', array('conditional' => 'lt IE 9',))
 
             // ember js dependencies
-            ->appendFile($this->basePath() . '/js/handlebars/handlebars.min.js')
+            ->appendFile($this->basePath() . '/js/ember/ember-template-compiler.js')
+//            ->appendFile($this->basePath() . '/js/ember/ember.debug.js')
             ->appendFile($this->basePath() . '/js/ember/ember.min.js');
         ; ?>
 
@@ -63,7 +64,8 @@
             {{outlet}}
         </div>
         </script>
-
+   
+        
         <?php $script =  $this->inlineScript();
               $script->appendFile($this->basePath() . '/js/app.js');
 
